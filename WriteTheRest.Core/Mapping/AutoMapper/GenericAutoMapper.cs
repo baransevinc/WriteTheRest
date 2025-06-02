@@ -16,7 +16,7 @@ namespace WriteTheRest.Core.Mapping.AutoMapper
             _mapper = mapper;
         }
 
-        public TDestination Map<TSource, TDestination>(TSource source)
+        public TDestination Map<TSource, TDestination>(TSource source) 
         {
             return _mapper.Map<TDestination>(source);
         }

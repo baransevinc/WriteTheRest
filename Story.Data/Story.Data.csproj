@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dto\" />
     <Folder Include="Repositories\Abstract\" />
     <Folder Include="Repositories\Repository\" />
   </ItemGroup>

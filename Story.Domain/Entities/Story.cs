@@ -8,7 +8,7 @@ namespace Story.Domain.Entities
 {
     public class Story
     {
-        public int Id { get; set; }
+        public short Id { get; set; }
         public string Title { get; set; }             // Hikaye başlığı
         public string Theme { get; set; }             // Ana konusu
         public string? Description { get; set; }      // Açıklama

@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WriteTheRest.Core.Repository.Abstract;
+using WriteTheRest.Core.Result; // Ensure this namespace contains the 'Result' type
+
 
 namespace WriteTheRest.Core.Helpers
 {
     public static class TransactionHelper
     {
-        public static async Task<Result> ExecuteInTransactionAsync(IUnitOfWork unitOfWork, Func<Task<Result>> action)
+        public static async Task<WriteTheRest.Core.Result.Result> ExecuteInTransactionAsync(IUnitOfWork unitOfWork, Func<Task<WriteTheRest.Core.Result.Result>> action)
         {
             try
             {

@@ -11,7 +11,7 @@ using Story.Data.Context;
 
 namespace Story.Data.Migrations
 {
-    [DbContext(typeof(StoryDbContext))]
+    [DbContext(typeof(StoryContext))]
     [Migration("20250602111758_InitialCreate")]
     partial class InitialCreate
     {

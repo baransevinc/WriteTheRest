@@ -5,7 +5,7 @@
 WriteTheRest, hikaye ve bölümlerinin yönetilebildiği, kullanıcıların hikaye ekleyip güncelleyebildiği, bölümlere puan ve yorum verebildiği bir platformdur.  
 Proje iki ana bileşenden oluşur:
 
-- **Backend:** .NET 8 tabanlı RESTful API (Story.API)
+- **Backend:** .NET 8 tabanlı RESTful API (Story.API) (Servisler, iş kuralları bu projede)
 - **Frontend:** ASP.NET MVC projesi (WriteTheRest.Web ) (Bu projeyi de repolarımda bulabilirsiniz)
 
 Bu iki proje birbirine entegre edilmiştir ve birlikte çalışır.

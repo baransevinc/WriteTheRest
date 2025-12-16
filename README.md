@@ -1,5 +1,4 @@
-# WriteTheRest – Story Management Platform
-
+# WriteTheRest 
 # Proje Hakkında
 
 WriteTheRest, kullanıcıların hikâyeler oluşturabildiği, bu hikâyelere bölümler ekleyebildiği ve bölümler üzerinde puanlama ile yorum yapabildiği bir hikâye yönetim platformudur.  

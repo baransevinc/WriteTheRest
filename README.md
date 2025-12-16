@@ -1,43 +1,46 @@
-# WriteTheRest - Story Management Platform
+# WriteTheRest – Story Management Platform
 
-## Proje Hakkında
+# Proje Hakkında
 
-WriteTheRest, hikaye ve bölümlerinin yönetilebildiği, kullanıcıların hikaye ekleyip güncelleyebildiği, bölümlere puan ve yorum verebildiği bir platformdur.  
-Proje iki ana bileşenden oluşur:
+WriteTheRest, kullanıcıların hikâyeler oluşturabildiği, bu hikâyelere bölümler ekleyebildiği ve bölümler üzerinde puanlama ile yorum yapabildiği bir hikâye yönetim platformudur.  
+Sistem, frontend ve backend olmak üzere iki ayrı projeden oluşur ve bu projeler birbiriyle entegre şekilde çalışır.
 
-- **Backend:** .NET 8 tabanlı RESTful API (Story.API) (Servisler, iş kuralları bu projede)
-- **Frontend:** ASP.NET MVC projesi (WriteTheRest.Web ) (Bu projeyi de repolarımda bulabilirsiniz)
+Backend tarafında tüm iş kuralları ve veri işlemleri yer alırken, frontend tarafı kullanıcı arayüzünü sağlar.
 
-Bu iki proje birbirine entegre edilmiştir ve birlikte çalışır.
+# Proje Bileşenleri
 
----
+- **Backend**  
+  .NET 8 tabanlı RESTful API (Story.API).  
+  Servisler, iş mantığı ve veri erişimi bu projede bulunur.
 
-## İçerik
+- **Frontend**  
+  ASP.NET MVC tabanlı web uygulaması (WriteTheRest.Web).  
+  Kullanıcı arayüzünü içerir ve API ile iletişim kurar.
 
-- [Özellikler](#özellikler)
-- [Teknolojiler](#teknolojiler)
-- [Kurulum](#kurulum)
-- [Projeleri Çalıştırma](#projeleri-çalıştırma)
-- [API Endpointleri](#api-endpointleri)
-- [Entegrasyon](#entegrasyon)
-- [Katkı Sağlama](#katkı-sağlama)
-- [Lisans](#lisans)
+Her iki proje birlikte çalışacak şekilde tasarlanmıştır.
 
----
+# İçerik
 
-## Özellikler
+- Özellikler  
+- Kullanılan Teknolojiler  
+- Kurulum  
+- Projeleri Çalıştırma  
+- API Endpointleri  
+- Entegrasyon  
+- Katkı Sağlama  
+- Lisans  
 
-- Hikaye (Story) CRUD işlemleri
-- Bölüm (Chapter) CRUD işlemleri
+# Özellikler
+
+- Hikâye (Story) ekleme, listeleme, güncelleme ve silme işlemleri
+- Bölüm (Chapter) yönetimi (CRUD)
 - Kullanıcı yönetimi
-- Hikaye versiyonları ve puanlama (Rating)
+- Hikâye versiyonlama ve puanlama sistemi
 - RESTful API mimarisi
 - MVC tabanlı kullanıcı arayüzü
-- API ve MVC arasında tam entegrasyon
+- API ve frontend arasında tam entegrasyon
 
----
-
-## Teknolojiler
+# Teknolojiler
 
 - .NET 8
 - ASP.NET Core Web API
@@ -47,87 +50,102 @@ Bu iki proje birbirine entegre edilmiştir ve birlikte çalışır.
 - AutoMapper
 - Swagger (API dokümantasyonu)
 
----
+# Kurulum
 
-## Kurulum
+# Backend (API) Projesi
 
-### 1. Backend (API) Projesi
+API projesi varsayılan olarak aşağıdaki adreslerde çalışır:
 
-API, varsayılan olarak şu adreslerde çalışır:
-- https://localhost:7081/
-- http://localhost:5134/
+https://localhost:7081/
+http://localhost:5134/
 
-### 2. Frontend (MVC) Projesi
+css
+Kodu kopyala
 
-MVC projesi, genellikle https://localhost:5002/ gibi bir adreste çalışır.
+# Frontend (MVC) Projesi
 
----
+MVC projesi genellikle aşağıdaki gibi bir adreste çalışır:
 
-## Projeleri Çalıştırma
+https://localhost:5002/
 
-1. **Önce API projesini başlatın.**  
-   (Veritabanı migration işlemlerini tamamlayın.)
+bash
+Kodu kopyala
 
-2. **Ardından MVC frontend projesini başlatın.**  
-   (Web projesi, API'ye HTTP istekleri göndererek veri çeker ve gönderir.)
+# Projeleri Çalıştırma
 
-3. **Her iki proje de aynı anda çalışmalıdır.**  
-   - API projesi: https://localhost:7081/
-   - MVC projesi: https://localhost:5002/ (veya kendi portunuz)
+Öncelikle API projesini başlatın.  
+Gerekli veritabanı migration işlemlerinin tamamlandığından emin olun.
 
----
+Ardından MVC frontend projesini çalıştırın.  
+Web uygulaması, API’ye HTTP istekleri göndererek veri alır ve gönderir.
 
-## API Endpointleri (Örnekler)
+Her iki projenin de aynı anda çalışıyor olması gerekir.
 
-- **Hikayeler**
-  - GET    `/api/stories/getall`
-  - GET    `/api/stories?id=1`
-  - POST   `/api/stories/add`
-  - POST   `/api/stories/update`
-  - DELETE `/api/stories/delete?id=1`
+- API projesi: https://localhost:7081/
+- MVC projesi: https://localhost:5002/ (veya kendi port ayarınız)
 
-- **Bölümler**
-  - GET    `/api/chapters/getall`
-  - GET    `/api/chapters?id=1`
-  - POST   `/api/chapters/add`
-  - POST   `/api/chapters/update`
-  - DELETE `/api/chapters/delete?id=1`
+# API Endpointleri
 
-- **Kullanıcılar**
-  - GET    `/api/users/getall`
-  - GET    `/api/users?id=1`
-  - POST   `/api/users/add`
-  - POST   `/api/users/update`
-  - DELETE `/api/users/delete?id=1`
+# Hikâyeler
 
-> Tüm endpointler için Swagger arayüzünü kullanabilirsiniz:  
-> `https://localhost:7081/swagger`
+GET /api/stories/getall
+GET /api/stories?id=1
+POST /api/stories/add
+POST /api/stories/update
+DELETE /api/stories/delete?id=1
 
----
+bash
+Kodu kopyala
 
-## Entegrasyon
+# Bölümler
 
-- **MVC projesi**, API projesine `HttpClient` ile istek gönderir.
-- API'den dönen DTO'lar, MVC projesinde `Models` veya `Dtos` klasöründe tutulur.
-- API ile haberleşen servisler (`StoryApiService`, `ChapterApiService` vb.) MVC projesinin `Services` klasöründe yer alır.
-- CORS ayarları API projesinde yapılmıştır, böylece farklı portlarda çalışan frontend ve backend sorunsuz iletişim kurar.
+GET /api/chapters/getall
+GET /api/chapters?id=1
+POST /api/chapters/add
+POST /api/chapters/update
+DELETE /api/chapters/delete?id=1
 
----
+bash
+Kodu kopyala
 
-## Katkı Sağlama
+# Kullanıcılar
 
-1. Fork'layın
-2. Yeni bir branch oluşturun (`git checkout -b feature/ozellik`)
-3. Değişikliklerinizi commit'leyin (`git commit -am 'Yeni özellik ekle'`)
-4. Branch'i push'layın (`git push origin feature/ozellik`)
-5. Pull request açın
+GET /api/users/getall
+GET /api/users?id=1
+POST /api/users/add
+POST /api/users/update
+DELETE /api/users/delete?id=1
 
----
+bash
+Kodu kopyala
 
-## Lisans
+Tüm endpointleri incelemek ve test etmek için Swagger arayüzünü kullanabilirsiniz:
 
-Bu proje MIT lisansı ile lisanslanmıştır.
+https://localhost:7081/swagger
 
----
+markdown
+Kodu kopyala
 
-Her türlü soru ve katkı için lütfen iletişime geçin!
+# Entegrasyon
+
+MVC projesi, API ile HttpClient üzerinden iletişim kurar.  
+API’den dönen DTO’lar, MVC projesinde Models veya Dtos klasörlerinde tutulur.  
+API çağrılarını yapan servis sınıfları (StoryApiService, ChapterApiService vb.) Services klasörü altında yer alır.  
+CORS ayarları API tarafında yapılandırılmıştır, böylece farklı portlarda çalışan projeler sorunsuz şekilde haberleşir.
+
+# Katkı Sağlama
+
+- Projeyi fork’layın
+- Yeni bir branch oluşturun  
+  `git checkout -b feature/yeni-ozellik`
+- Değişikliklerinizi commit edin  
+  `git commit -am 'Yeni özellik eklendi'`
+- Branch’i uzak repoya gönderin  
+  `git push origin feature/yeni-ozellik`
+- Pull request oluşturun
+
+# Lisans
+
+Bu proje **MIT lisansı** ile lisanslanmıştır.
+
+Her türlü soru, öneri veya katkı için iletişime geçebilirsiniz.
